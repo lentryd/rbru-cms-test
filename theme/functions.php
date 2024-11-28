@@ -3,8 +3,13 @@
 // Добавляем поддержку <title> тега
 add_theme_support('title-tag');
 
+// Добавляем поддержку комментариев
+add_theme_support('comments');
+
 // Добавляем поддержку превью постов
 add_theme_support('post-thumbnails');
+
+
 
 /* Подключение стилей и скриптов */
 function connect_scripts()
@@ -53,7 +58,7 @@ function register_services_post_type()
     ],
     'public' => true,
     'has_archive' => true,
-    'supports' => ['title', 'editor', 'thumbnail', 'custom-fields'],
+    'supports' => ['title', 'editor', 'thumbnail', 'custom-fields', 'comments'],
     'menu_icon' => 'dashicons-hammer',
   ]);
 }
