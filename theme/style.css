@@ -475,77 +475,88 @@ main
 }
 
 /* Контейнер */
-main.single-service .container {
+/* Общие стили */
+.single-service .container {
   max-width: 800px;
-  margin: 20px auto;
-  padding: 0; /* Убираем внутренние отступы */
-  background-color: transparent; /* Убираем фон */
-  border: none; /* Убираем рамку */
-  box-shadow: none; /* Убираем тени */
+  margin: 0 auto;
+  padding: 20px;
 }
 
-/* Заголовок поста */
+/* Заголовок услуги */
+.service-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
 .service-title {
-  font-size: 24px;
+  font-size: 32px;
   font-weight: bold;
+  color: #333;
   margin-bottom: 10px;
-  color: #222; /* Обычный темный цвет текста */
 }
 
-/* Метаданные поста */
-.service-meta {
-  font-size: 14px;
-  color: #555;
-  margin-bottom: 20px;
-}
-
-.service-meta span {
-  display: inline-block;
-  margin-right: 10px;
-}
-
-/* Метки */
-.tags {
-  list-style: none;
-  padding: 0;
-  margin: 20px 0;
+.service-tags {
   display: flex;
-  flex-wrap: wrap;
+  justify-content: center;
   gap: 10px;
+  flex-wrap: wrap;
 }
 
-.tag span {
+.service-tag {
   display: inline-block;
-  padding: 2px 8px; /* Уменьшаем размер "ярлыков" */
-  background-color: #eee; /* Легкий серый фон для минимализма */
-  color: #333; /* Темный цвет текста */
+  background-color: #007bff;
+  color: #fff;
+  font-size: 14px;
+  padding: 5px 10px;
   border-radius: 3px;
-  font-size: 12px;
 }
 
-/* Содержимое поста */
-.service-content {
-  font-size: 16px;
-  margin-bottom: 20px;
-  color: #444;
+/* Превью изображения */
+.service-thumbnail {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.service-thumbnail img.service-image {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Цена */
 .service-price {
-  font-size: 18px;
+  font-size: 24px;
   font-weight: bold;
-  color: #333; /* Используем обычный цвет текста */
+  color: #a1a1a1;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Содержимое услуги */
+.service-content {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #333;
   margin-top: 20px;
 }
 
-/* Медиа-запросы для адаптивности */
-@media (max-width: 768px) {
+/* Адаптивность */
+@media (max-width: 600px) {
   .service-title {
-    font-size: 20px;
+    font-size: 28px;
+  }
+
+  .service-tags {
+    gap: 5px;
   }
 
   .service-content {
-    font-size: 14px;
+    font-size: 16px;
+  }
+
+  .service-price {
+    font-size: 20px;
   }
 }
 
