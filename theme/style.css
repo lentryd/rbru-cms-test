@@ -186,6 +186,12 @@ main .services-container {
   padding-bottom: 64px;
 
   font-family: "Inter", sans-serif;
+
+  scrollbar-width: 0;
+}
+
+main .services-container::-webkit-scrollbar {
+  display: none;
 }
 
 main .services-container .services-container-item {
