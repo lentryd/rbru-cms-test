@@ -175,6 +175,32 @@ main
   color: #a1a1a1;
 }
 
+main .services {
+  gap: 24px;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 64px;
+}
+
+main .services .snap-scroll-indicator {
+  gap: 12px;
+  display: flex;
+  flex-direction: row;
+
+  margin: 0 auto;
+}
+main .services .snap-scroll-indicator .snap-scroll-indicator-item {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+
+  transition: background-color 0.3s;
+  background-color: #e6e6e6;
+}
+main .services .snap-scroll-indicator .snap-scroll-indicator-item.active {
+  background-color: #1e1e1e;
+}
+
 main .services-container {
   gap: 20px;
   display: flex;
@@ -183,15 +209,8 @@ main .services-container {
 
   width: 100%;
   overflow-x: auto;
-  padding-bottom: 64px;
 
   font-family: "Inter", sans-serif;
-
-  scrollbar-width: 0;
-}
-
-main .services-container::-webkit-scrollbar {
-  display: none;
 }
 
 main .services-container .services-container-item {
@@ -306,5 +325,13 @@ main
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 
     font-family: "Inter", sans-serif;
+  }
+
+  main .services-container {
+    scrollbar-width: 0;
+  }
+
+  main .services-container::-webkit-scrollbar {
+    display: none;
   }
 }
