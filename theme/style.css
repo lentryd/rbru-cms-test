@@ -25,6 +25,8 @@ body {
   margin: 0;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+
+  font-family: "Inter", sans-serif;
 }
 
 header {
@@ -333,5 +335,296 @@ main
 
   main .services-container::-webkit-scrollbar {
     display: none;
+  }
+}
+
+/* Стили для блока комментариев */
+.comments-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 10px;
+}
+
+/* Список комментариев */
+.comment-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.comment-list li {
+  margin-bottom: 20px;
+  border: 1px solid #eaeaea;
+  border-radius: 5px;
+  padding: 15px;
+  background-color: #f9f9f9;
+}
+
+.comment-meta {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.comment-content {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Ссылка для ответа на комментарий */
+.comment-reply-link {
+  font-size: 14px;
+  color: #007bff;
+  text-decoration: none;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+.comment-reply-link:hover {
+  text-decoration: underline;
+}
+
+/* Навигация по комментариям */
+.comment-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.comment-navigation .nav-previous,
+.comment-navigation .nav-next {
+  font-size: 14px;
+  color: #007bff;
+}
+
+.comment-navigation .nav-previous:hover,
+.comment-navigation .nav-next:hover {
+  text-decoration: underline;
+}
+
+/* Стили для формы добавления комментария */
+.comment-respond {
+  margin-top: 30px;
+  border: 1px solid #eaeaea;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.comment-respond h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.comment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.comment-form label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #555;
+}
+
+.comment-form input[type="text"],
+.comment-form input[type="email"],
+.comment-form textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #333;
+  box-sizing: border-box;
+}
+
+.comment-form textarea {
+  resize: vertical;
+  height: 120px;
+}
+
+.comment-form input[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: background-color 0.3s;
+}
+
+.comment-form input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Сообщение об ошибке или успехе */
+.comment-awaiting-moderation {
+  font-size: 14px;
+  color: #ff5722;
+  margin-top: 10px;
+  font-style: italic;
+}
+
+/* Контейнер */
+main.single-service .container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 0; /* Убираем внутренние отступы */
+  background-color: transparent; /* Убираем фон */
+  border: none; /* Убираем рамку */
+  box-shadow: none; /* Убираем тени */
+}
+
+/* Заголовок поста */
+.service-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #222; /* Обычный темный цвет текста */
+}
+
+/* Метаданные поста */
+.service-meta {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.service-meta span {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+/* Метки */
+.tags {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tag span {
+  display: inline-block;
+  padding: 2px 8px; /* Уменьшаем размер "ярлыков" */
+  background-color: #eee; /* Легкий серый фон для минимализма */
+  color: #333; /* Темный цвет текста */
+  border-radius: 3px;
+  font-size: 12px;
+}
+
+/* Содержимое поста */
+.service-content {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+/* Цена */
+.service-price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333; /* Используем обычный цвет текста */
+  margin-top: 20px;
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 768px) {
+  .service-title {
+    font-size: 20px;
+  }
+
+  .service-content {
+    font-size: 14px;
+  }
+}
+
+/* Контейнер страницы */
+.single-post .container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Заголовок */
+.post-header {
+  margin-bottom: 20px;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 10px;
+}
+
+.post-title {
+  font-size: 32px;
+  font-weight: bold;
+  color: #333;
+}
+
+.post-meta {
+  font-size: 14px;
+  color: #555;
+}
+
+/* Превью изображения */
+.post-thumbnail {
+  margin-bottom: 20px;
+}
+
+.post-thumbnail img.featured-image {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+/* Контент статьи */
+.post-content {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+/* Теги */
+.post-tags {
+  margin-top: 20px;
+}
+
+.tags {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 10px;
+}
+
+.tag span {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 3px;
+  font-size: 14px;
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 600px) {
+  .post-title {
+    font-size: 28px;
+  }
+
+  .post-meta {
+    font-size: 12px;
+  }
+
+  .post-content {
+    font-size: 16px;
   }
 }
