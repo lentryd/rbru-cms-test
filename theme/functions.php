@@ -38,3 +38,42 @@ function register_footer_widget_area()
   ));
 }
 add_action('widgets_init', 'register_footer_widget_area');
+
+// Регистрация услуг
+function register_services_post_type()
+{
+  register_post_type('service', [
+    'labels' => [
+      'name' => 'Услуги',
+      'singular_name' => 'Услуга',
+      'add_new' => 'Добавить услугу',
+      'edit_item' => 'Редактировать услугу',
+    ],
+    'public' => true,
+    'has_archive' => true,
+    'supports' => ['title', 'editor', 'thumbnail', 'custom-fields'],
+    'menu_icon' => 'dashicons-hammer',
+  ]);
+}
+add_action('init', 'register_services_post_type');
+
+
+// Регистрация таксономии для услуг
+function register_service_tags()
+{
+  register_taxonomy('service_tag', 'service', [
+    'labels' => [
+      'name' => 'Метки услуг',
+      'singular_name' => 'Метка услуги',
+      'search_items' => 'Найти метки',
+      'all_items' => 'Все метки',
+      'edit_item' => 'Редактировать метку',
+      'add_new_item' => 'Добавить новую метку',
+    ],
+    'public' => true,
+    'hierarchical' => false, // false - метки (теги), true - категории
+    'show_admin_column' => true,
+    'show_in_rest' => true, // Включаем поддержку Gutenberg
+  ]);
+}
+add_action('init', 'register_service_tags');
