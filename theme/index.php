@@ -80,6 +80,16 @@
 
       <div class="snap-scroll-indicator"></div>
     </div>
+  </div>
+
+  <form action="<?php echo admin_url('admin-ajax.php'); ?>" method="post" class="feedback-form">
+    <input hidden name="action" value="feedback">
+    <input type="text" name="name" placeholder="Имя" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="phone" name="phone" placeholder="Телефон" required>
+    <textarea name="message" placeholder="Сообщение" required></textarea>
+    <button type="submit">Отправить</button>
+  </form>
 </main>
 
 <?php get_footer(); ?>
