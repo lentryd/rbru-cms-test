@@ -11,6 +11,9 @@ function connect_scripts()
 {
   /* подключение стилей */
   wp_enqueue_style('main', get_stylesheet_uri());
+
+  /* подключение скриптов */
+  wp_enqueue_script('snap-scroll', get_template_directory_uri() . '/js/snap-scroll.js', array(), '', true);
 }
 add_action('wp_enqueue_scripts', 'connect_scripts');
 
@@ -18,8 +21,7 @@ add_action('wp_enqueue_scripts', 'connect_scripts');
 function register_menus()
 {
   $locatoins = array(
-    'header' => __('Main menu', 'band_digital'),
-    'footer' => __('Footer menu', 'band_digital')
+    'header' => __('Main menu', 'theme'),
   );
   register_nav_menus($locatoins);
 }

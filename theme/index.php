@@ -5,9 +5,15 @@
     <h1>Статьи</h1>
 
     <div class="posts-container">
-      <?php if (have_posts()): ?>
-        <?php while (have_posts()):
-          the_post(); ?>
+      <?php
+      $articles = new WP_Query([
+        'post_type' => 'post', // Тип записи: статьи
+        'posts_per_page' => 3, // Показываем последние 3 статьи
+      ]);
+
+      if ($articles->have_posts()):
+        while ($articles->have_posts()):
+          $articles->the_post(); ?>
           <a href="<?php the_permalink() ?>" class="posts-container-item">
             <?php the_post_thumbnail(); ?>
 
@@ -20,6 +26,8 @@
             </div>
           </a>
         <?php endwhile; ?>
+      <?php else: ?>
+        <p>Нет статей для отображения.</p>
       <?php endif; ?>
     </div>
   </div>
