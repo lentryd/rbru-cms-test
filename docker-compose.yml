@@ -1,0 +1,33 @@
+services:
+  wordpress:
+    image: wordpress:latest
+    depends_on:
+      - db
+    volumes:
+      - wp:/var/www/html
+      - ./theme/:/var/www/html/wp-content/themes/my-theme
+      - ./plugin/:/var/www/html/wp-content/plugins/my-core
+      - ./custom.ini:/usr/local/etc/php/conf.d/custom.ini
+    ports:
+      - "80:80"
+    restart: always
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_NAME: cms-test
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress_pass
+
+  db:
+    image: mysql:8.0
+    restart: always
+    volumes:
+      - db:/var/lib/mysql
+    environment:
+      MYSQL_USER: wordpress
+      MYSQL_DATABASE: cms-test
+      MYSQL_PASSWORD: wordpress_pass
+      MYSQL_ROOT_PASSWORD: root_pass
+
+volumes:
+  db:
+  wp:
