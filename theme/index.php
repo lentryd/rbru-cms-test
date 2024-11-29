@@ -82,13 +82,28 @@
     </div>
   </div>
 
-  <form action="<?php echo admin_url('admin-ajax.php'); ?>" method="post" class="feedback-form">
-    <input hidden name="action" value="feedback">
-    <input type="text" name="name" placeholder="Имя" required>
-    <input type="email" name="email" placeholder="Email" required>
-    <input type="phone" name="phone" placeholder="Телефон" required>
-    <textarea name="message" placeholder="Сообщение" required></textarea>
-    <button type="submit">Отправить</button>
+  <form class="feedback-form">
+    <h3>Свяжитесь с нами</h3>
+    <input type="hidden" name="action" value="feedback">
+    <input type="text" id="form-action-url" hidden value="<?php echo admin_url('admin-ajax.php'); ?>"></div>
+    <div class="form-group">
+      <input type="text" name="name" placeholder="Имя" required>
+    </div>
+    <div class="form-group">
+      <input type="email" name="email" placeholder="Email" required>
+    </div>
+    <div class="form-group">
+      <input type="phone" name="phone" placeholder="Телефон" required>
+    </div>
+    <div class="form-group">
+      <textarea name="message" placeholder="Сообщение" required></textarea>
+    </div>
+    <button type="submit" class="btn-submit">
+      Отправить
+      <span class="loader" style="display: none;"></span>
+    </button>
+
+    <div class="form-message" style="display: none;"></div>
   </form>
 </main>
 

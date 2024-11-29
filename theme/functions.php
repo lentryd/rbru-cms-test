@@ -18,6 +18,7 @@ function connect_scripts()
   wp_enqueue_style('main', get_stylesheet_uri());
 
   /* подключение скриптов */
+  wp_enqueue_script('form', get_template_directory_uri() . '/assets/js/form.js', array(), '', true);
   wp_enqueue_script('snap-scroll', get_template_directory_uri() . '/assets/js/snap-scroll.js', array(), '', true);
 }
 add_action('wp_enqueue_scripts', 'connect_scripts');
